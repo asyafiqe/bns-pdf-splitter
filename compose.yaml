@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  bns_pdf_splitter:
+    image: asyafiqe/bns-pdf-splitter:0.1
+    container_name: bns_pdf_splitter
+    ports:
+      - "8523:8523"
+    # volumes:
+    #   # For development: mount local files to container
+    #   - ./app.py:/app/app.py
+    #   - ./bns_pdf_splitter.py:/app/bns_pdf_splitter.py
+    #   - ./assets:/app/assets
+    # environment:
+    #   - STREAMLIT_SERVER_PORT=8523
+    #   - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    restart: unless-stopped
+    # Optional: if you need to limit resources
+#     deploy:
+#       resources:
+#         limits:
+#           cpus: '1'
+#           memory: 1G
+#         reservations:
+#           cpus: '0.5'
+#           memory: 512M
+
+# networks:
+#   default:
+#     driver: bridge
